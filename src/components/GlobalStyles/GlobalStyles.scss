@@ -1,0 +1,25 @@
+/*
+_ Để cài đặt SASS vào Terminal chạy câu lệnh: npm i -D sass
+_ Để reset CSS vào Terminal chạy câu lệnh: npm install --save normalize.css, rồi Import nó vào
+_ Chọn Font vào https://fonts.google.com/specimen/Montserrat
+*/
+
+@import 'normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap');
+
+:root{
+--primary: #fe2c55;
+
+}
+
+html {
+font-size: 62.5%;
+
+}
+
+body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    text-rendering: optimizeSpeed;
+}

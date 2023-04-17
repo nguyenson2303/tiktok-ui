@@ -1,6 +1,3 @@
-import logo from './logo.svg';
-import './App.css';
-
 function App() {
   /**
     _ Câu lệnh set lại UserName và Gmail trong Git:
