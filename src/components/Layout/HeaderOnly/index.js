@@ -7,6 +7,8 @@ function DefaultLayout({ children }) {
         <div className="container">
             <div className="content">{children}</div>
         </div>
+
+        <div></div>
     </div> );
 }
 
