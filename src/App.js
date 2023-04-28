@@ -1,3 +1,8 @@
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import {publicRoutes} from '~/routes'
+import { DefaultLayout } from './components/Layout'
+import { Fragment } from 'react'
+
 function App() {
   /**
     _ Câu lệnh set lại UserName và Gmail trong Git:
@@ -53,11 +58,30 @@ module.exports = override(
     
     * Bước 5: Để thêm babelrc vào Webpack vào file config-overrides.js để cấu hình.
 
+    * Bước 6: Cài đặt react-router-dom, vào Terminal chạy câu lệnh: npm i react-router-dom.
+
    */
+  
   return (
-    <>
-      <h1>Wassup!!!</h1>
-    </>
+    <Router>
+    <div className='App'>
+      <Routes>
+      {publicRoutes.map((route, index) => {
+        
+        let Layout = DefaultLayout
+        if (route.layout) {
+            Layout = route.layout
+        } else if (route.layout === null) {
+            Layout = Fragment
+        }
+
+        const Page = route.component
+
+        return <Route key={index} path={route.path} element={<Layout><Page/></Layout>}/>
+      })}
+      </Routes>
+    </div>
+    </Router>
   )
 }
 
